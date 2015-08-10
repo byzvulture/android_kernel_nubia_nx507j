@@ -126,7 +126,7 @@ static int half_copy_loop_size __cpuinitdata;
 static int cache_line_size __cpuinitdata;
 #define cache_line_mask() (cache_line_size - 1)
 
-static inline void
+static inline void __cpuinit
 pg_addiu(u32 **buf, unsigned int reg1, unsigned int reg2, unsigned int off)
 {
 	if (cpu_has_64bit_gp_regs && DADDI_WAR && r4k_daddiu_bug()) {

@@ -2196,7 +2196,7 @@ static void __cpuinit mce_reenable_cpu(void *h)
 }
 
 /* Get notified when a cpu comes on/off. Be hotplug friendly. */
-static int
+static int __cpuinit
 mce_cpu_callback(struct notifier_block *nfb, unsigned long action, void *hcpu)
 {
 	unsigned int cpu = (unsigned long)hcpu;
