@@ -61,18 +61,18 @@ static void __cpuinit do_cyrix_devid(unsigned char *dir0, unsigned char *dir1)
  */
 static unsigned char Cx86_dir0_msb __cpuinitdata = 0;
 
-static const char Cx86_model[][9] = {
+static const char __cpuinitconst Cx86_model[][9] = {
 	"Cx486", "Cx486", "5x86 ", "6x86", "MediaGX ", "6x86MX ",
 	"M II ", "Unknown"
 };
-static const char Cx486_name[][5] = {
+static const char __cpuinitconst Cx486_name[][5] = {
 	"SLC", "DLC", "SLC2", "DLC2", "SRx", "DRx",
 	"SRx2", "DRx2"
 };
-static const char Cx486S_name[][4] = {
+static const char __cpuinitconst Cx486S_name[][4] = {
 	"S", "S2", "Se", "S2e"
 };
-static const char Cx486D_name[][4] = {
+static const char __cpuinitconst Cx486D_name[][4] = {
 	"DX", "DX2", "?", "?", "?", "DX4"
 };
 
@@ -441,7 +441,7 @@ static void __cpuinit cyrix_identify(struct cpuinfo_x86 *c)
 	}
 }
 
-static const struct cpu_dev cyrix_cpu_dev = {
+static const struct cpu_dev __cpuinitconst cyrix_cpu_dev = {
 	.c_vendor	= "Cyrix",
 	.c_ident	= { "CyrixInstead" },
 	.c_early_init	= early_init_cyrix,
@@ -452,7 +452,7 @@ static const struct cpu_dev cyrix_cpu_dev = {
 
 cpu_dev_register(cyrix_cpu_dev);
 
-static const struct cpu_dev nsc_cpu_dev = {
+static const struct cpu_dev __cpuinitconst nsc_cpu_dev = {
 	.c_vendor	= "NSC",
 	.c_ident	= { "Geode by NSC" },
 	.c_init		= init_nsc,
